@@ -19,12 +19,26 @@ def main():
         for char in file_contents:
             if char.isalpha():
                 letter_count[char] = letter_count.get(char, 0) +1
+
         print(letter_count)
+        print(" ")
 
     # aggregate report
     file_name = str(path_to_file)
     print("--- Begin report of ",file_name," ---")
     print(len(file_contents.split()),"words found in the document")
+    list_of_chars = []
+    for char, count in letter_count.items():
+        list_of_chars.append({"chars": char, "count": count})
+
+    def sort_on(dict):
+        return dict["count"]
+    list_of_chars.sort(reverse=True, key=sort_on)
+
+    for k, v in list_of_chars:
+        print(f"The '{k}' character was found {v} times")
+
+    print("--- End report ---")
 
 
 
