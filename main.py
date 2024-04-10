@@ -15,6 +15,8 @@ def main():
         # Counting Letters
         print(len(file_contents.split()))
 
+        # git commit -m "saving changes"
+
 
 # Calling the main function
 if __name__ == '__main__':
