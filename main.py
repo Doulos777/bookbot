@@ -13,10 +13,12 @@ def main():
         print(len(file_contents.split()))
 
         # Counting Letters
-        print(len(file_contents.split()))
-
-        # git commit -m "saving changes"
-
+    with open(path_to_file, 'r') as file:
+        file_contents = file.read().lower()
+        letter_count = {}
+        for char in file_contents:
+            letter_count[char] = letter_count.get(char, 0) +1
+        print(letter_count)
 
 # Calling the main function
 if __name__ == '__main__':
