@@ -17,8 +17,16 @@ def main():
         file_contents = file.read().lower()
         letter_count = {}
         for char in file_contents:
-            letter_count[char] = letter_count.get(char, 0) +1
+            if char.isalpha():
+                letter_count[char] = letter_count.get(char, 0) +1
         print(letter_count)
+
+    # aggregate report
+    file_name = str(path_to_file)
+    print("--- Begin report of ",file_name," ---")
+    print(len(file_contents.split()),"words found in the document")
+
+
 
 # Calling the main function
 if __name__ == '__main__':
