@@ -35,8 +35,8 @@ def main():
         return dict["count"]
     list_of_chars.sort(reverse=True, key=sort_on)
 
-    for k, v in list_of_chars:
-        print(f"The '{k}' character was found {v} times")
+    for item in list_of_chars:
+        print(f"The '",item['chars'],"' character was found ",item['count']," times")
 
     print("--- End report ---")
 
